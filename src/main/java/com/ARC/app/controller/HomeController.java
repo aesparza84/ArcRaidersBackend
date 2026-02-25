@@ -1,7 +1,7 @@
 package com.ARC.app.controller;
 
-import com.ARC.app.DTO.EnemyResponseDTO;
-import com.ARC.app.DTO.FullItemResponseDTO;
+import com.ARC.app.DTO.ARC.EnemyResponseDTO;
+import com.ARC.app.DTO.Items.FullItemResponseDTO;
 import com.ARC.app.service.ApiMessengerService;
 import com.ARC.app.service.CacheService;
 import jakarta.validation.constraints.Max;

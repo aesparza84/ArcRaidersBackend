@@ -1,6 +1,6 @@
 package com.ARC.app.model;
 
-import com.ARC.app.DTO.EnemyItemResponseDTO;
+import com.ARC.app.DTO.ARC.EnemyItemContainerDTO;
 
 import java.util.List;
 
@@ -9,10 +9,10 @@ public class Enemy {
     private String description;
     private String icon;
     private String image;
-    private List<EnemyItemResponseDTO> loot;
+    private List<EnemyItemContainerDTO> loot;
 
     public Enemy(){}
-    public Enemy(String name, String description, String icon, String image, List<EnemyItemResponseDTO> loot) {
+    public Enemy(String name, String description, String icon, String image, List<EnemyItemContainerDTO> loot) {
         this.name = name;
         this.description = description;
         this.icon = icon;
@@ -52,11 +52,11 @@ public class Enemy {
         this.image = image;
     }
 
-    public List<EnemyItemResponseDTO> getLoot() {
+    public List<EnemyItemContainerDTO> getLoot() {
         return loot;
     }
 
-    public void setLoot(List<EnemyItemResponseDTO> loot) {
+    public void setLoot(List<EnemyItemContainerDTO> loot) {
         this.loot = loot;
     }
 }

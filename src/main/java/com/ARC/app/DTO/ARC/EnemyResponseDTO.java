@@ -1,4 +1,6 @@
-package com.ARC.app.DTO;
+package com.ARC.app.DTO.ARC;
+
+import com.ARC.app.DTO.PageDataDTO;
 
 import java.util.List;
 

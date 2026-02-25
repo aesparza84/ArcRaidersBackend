@@ -1,51 +1,31 @@
-package com.ARC.app.DTO;
+package com.ARC.app.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.ARC.app.DTO.Items.FullItemStatBlockDTO;
 import java.util.List;
+import com.ARC.app.DTO.GuideLinksDTO;
 
-public class FullItemDTO {
-
+public class ItemFull {
     private String id;
     private String name;
     private String description;
-
-    @JsonProperty("item_type")
     private String itemType;
-
-    @JsonProperty("loadout_slots")
-    private List<String> loadoutSlots;
-
     private String icon;
     private String rarity;
-    private Integer value;
     private String workbench;
-
-    @JsonProperty("stat_block")
+    private String flavorText;
+    private String subcategory;
+    private String shieldType;
+    private String lootArea;
+    private String ammoType;
+    private Integer value;
     private FullItemStatBlockDTO statBlock;
 
-    @JsonProperty("flavor_text")
-    private String flavorText;
-
-    private String subcategory;
-
-    @JsonProperty("shield_type")
-    private String shieldType;
-
-    @JsonProperty("loot_area")
-    private String lootArea;
-
+    private List<String> loadoutSlots;
     private List<String> sources;
-
-    @JsonProperty("ammo_type")
-    private String ammoType;
-
     private List<String> locations;
-
-    @JsonProperty("guide_links")
     private List<GuideLinksDTO> guideLinks;
 
-    public FullItemDTO() {}
+    public ItemFull() {}
 
     public String getId() {
         return id;
@@ -191,27 +171,4 @@ public class FullItemDTO {
         this.guideLinks = guideLinks;
     }
 
-    public static class GuideLinksDTO{
-        private String url;
-        private String label;
-
-        public GuideLinksDTO(){}
-
-        public String getUrl() {
-            return url;
-        }
-
-        public void setUrl(String url) {
-            this.url = url;
-        }
-
-        public String getLabel() {
-            return label;
-        }
-
-        public void setLabel(String label) {
-            this.label = label;
-        }
-    }
 }
-

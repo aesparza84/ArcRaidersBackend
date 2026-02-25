@@ -3,8 +3,8 @@ package com.ARC.app.service;
 
 //DOCS - https://metaforge.app/arc-raiders/api
 
-import com.ARC.app.DTO.EnemyResponseDTO;
-import com.ARC.app.DTO.FullItemResponseDTO;
+import com.ARC.app.DTO.ARC.EnemyResponseDTO;
+import com.ARC.app.DTO.Items.FullItemResponseDTO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;

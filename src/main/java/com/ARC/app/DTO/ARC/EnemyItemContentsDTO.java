@@ -1,8 +1,8 @@
-package com.ARC.app.DTO;
+package com.ARC.app.DTO.ARC;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ItemDTO {
+public class EnemyItemContentsDTO {
     private String name;
     private String rarity;
 
@@ -10,15 +10,16 @@ public class ItemDTO {
     private String itemType;
     private String icon;
 
-    @JsonProperty("item_id")
+    @JsonProperty("id")
     private String itemId;
 
-    public ItemDTO(){}
-    public ItemDTO(String name, String rarity, String item_type, String icon) {
+    public EnemyItemContentsDTO(){}
+    public EnemyItemContentsDTO(String name, String rarity, String item_type, String icon, String itemId) {
         this.name = name;
         this.rarity = rarity;
         this.itemType = item_type;
         this.icon = icon;
+        this.itemId = itemId;
     }
 
     public String getName() {
@@ -51,5 +52,13 @@ public class ItemDTO {
 
     public void setIcon(String icon) {
         this.icon = icon;
+    }
+
+    public String getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
     }
 }
