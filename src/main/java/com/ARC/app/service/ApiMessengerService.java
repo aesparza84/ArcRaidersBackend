@@ -14,6 +14,7 @@ import tools.jackson.databind.ObjectMapper;
 
 import com.ARC.app.apiParameters.*;
 
+import java.io.File;
 import java.util.Optional;
 
 @Service
@@ -24,7 +25,7 @@ public class ApiMessengerService {
 
     public ApiMessengerService(){}
 
-    @CachePut(value = "arcCache", key = "#params")
+//    @CachePut(value = "arcCache", key = "#params")
     public Optional<EnemyResponseDTO> QueryArcURI(ApiArcParameters params) {
         ObjectMapper mapper = new ObjectMapper();
         String uri = UriComponentsBuilder.fromUriString(baseApi)
@@ -38,13 +39,17 @@ public class ApiMessengerService {
 
         RestTemplate template = new RestTemplate();
 
-        String response = template.getForObject(uri, String.class);
-        EnemyResponseDTO enemyData = mapper.readValue(response, EnemyResponseDTO.class);
+//        String response = template.getForObject(uri, String.class);
+//        EnemyResponseDTO enemyData = mapper.readValue(response, EnemyResponseDTO.class);
+
+        EnemyResponseDTO enemyData = mapper.readValue(
+                new File("src/main/java/com/ARC/app/junk/arc.json"),
+                EnemyResponseDTO.class);
 
         return Optional.ofNullable(enemyData);
     }
 
-    @CachePut(value="itemsCache", key = "#params")
+//    @CachePut(value="itemsCache", key = "#params")
     public Optional<FullItemResponseDTO> QueryItems(ApiItemParameters params) {
         ObjectMapper mapper = new ObjectMapper();
         String uri = UriComponentsBuilder.fromUriString(baseApi)
@@ -62,13 +67,13 @@ public class ApiMessengerService {
                 .queryParamIfPresent("minimal", Optional.ofNullable(params.getMinimal()))
                 .toUriString();
 
-        RestTemplate template = new RestTemplate();
-        String response = template.getForObject(uri, String.class);
-        FullItemResponseDTO itemResponse = mapper.readValue(response, FullItemResponseDTO.class);
+//        RestTemplate template = new RestTemplate();
+//        String response = template.getForObject(uri, String.class);
+//        FullItemResponseDTO itemResponse = mapper.readValue(response, FullItemResponseDTO.class);
 
-//        FullItemResponseDTO itemResponse = mapper.readValue(
-//                new File("src/main/java/com/ARC/app/junk/fullItem.json"),
-//                FullItemResponseDTO.class);
+        FullItemResponseDTO itemResponse = mapper.readValue(
+                new File("src/main/java/com/ARC/app/junk/fullItem.json"),
+                FullItemResponseDTO.class);
 
         return Optional.ofNullable(itemResponse);
     }

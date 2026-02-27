@@ -1,8 +1,10 @@
 package com.ARC.app.model;
 
-import com.ARC.app.DTO.Items.FullItemStatBlockDTO;
+import com.ARC.app.DTO.Items.*;
+
 import java.util.List;
 import com.ARC.app.DTO.GuideLinksDTO;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ItemFull {
     private String id;
@@ -18,15 +20,28 @@ public class ItemFull {
     private String lootArea;
     private String ammoType;
     private Integer value;
-    private FullItemStatBlockDTO statBlock;
+    private ItemStatBlock statBlock;
 
     private List<String> loadoutSlots;
     private List<String> sources;
     private List<String> locations;
     private List<GuideLinksDTO> guideLinks;
 
+    private List<SubItemComponentReferenceDTO> components;
+
+    private List<SubItemComponentReferenceDTO> recycleComponents;
+
+    private List<SubItemItemReferenceDTO> usedIn;
+
+    private List<SubItemItemReferenceDTO> recycleFrom;
+
+    private List<SubItemModReferenceDTO> mods;
+
+    private List<ItemDropByDTO> droppedBy;
+
     public ItemFull() {}
 
+//region GetterSetters
     public String getId() {
         return id;
     }
@@ -99,11 +114,11 @@ public class ItemFull {
         this.workbench = workbench;
     }
 
-    public FullItemStatBlockDTO getStatBlock() {
+    public ItemStatBlock getStatBlock() {
         return statBlock;
     }
 
-    public void setStatBlock(FullItemStatBlockDTO statBlock) {
+    public void setStatBlock(ItemStatBlock statBlock) {
         this.statBlock = statBlock;
     }
 
@@ -170,5 +185,34 @@ public class ItemFull {
     public void setGuideLinks(List<GuideLinksDTO> guideLinks) {
         this.guideLinks = guideLinks;
     }
+//endregion
 
+    public FullItemDTO toDTO() {
+        return new FullItemDTO(
+                this.id,
+                this.name,
+                this.description,
+                this.itemType,
+                this.loadoutSlots,
+                this.icon,
+                this.rarity,
+                this.value,
+                this.workbench,
+                this.statBlock.toDTO(),
+                this.flavorText,
+                this.subcategory,
+                this.shieldType,
+                this.lootArea,
+                this.sources,
+                this.ammoType,
+                this.locations,
+                this.components,
+                this.recycleComponents,
+                this.usedIn,
+                this.recycleFrom,
+                this.mods,
+                this.droppedBy,
+                this.guideLinks
+        );
+    }
 }

@@ -1,31 +1,30 @@
 package com.ARC.app.DTO.Items;
 
-public class FullItemStatBlockDTO {
-    private Integer range;
-    private Integer value;
+public class ItemStatBlockDTO {
+    private Double range;
     private Integer damage;
     private Integer health;
     private Integer radius;
     private Integer shield;
-    private Integer weight;
-    private Integer agility;
-    private Integer arcStun;
+    private Double weight;
+    private Double agility;
+    private Double arcStun;
     private Integer healing;
     private Integer stamina;
     private Integer stealth;
-    private Integer useTime;
+    private Double useTime;
     private Integer duration;
-    private Integer fireRate;
-    private Integer stability;
+    private Double fireRate;
+    private Double stability;
     private Integer stackSize;
     private Integer damageMult;
-    private Integer raiderStun;
+    private Double raiderStun;
     private Integer weightLimit;
     private Integer augmentSlots;
     private Integer healingSlots;
     private Integer magazineSize;
     private Integer reducedNoise;
-    private Integer shieldCharge;
+    private Double shieldCharge;
     private Integer backpackSlots;
     private Integer quickUseSlots;
     private Integer damagePerSecond;
@@ -43,6 +42,8 @@ public class FullItemStatBlockDTO {
     private Integer reducedUnequipTime;
 
     private String shieldCompatibility;
+    private String firingMode;
+    private String compatibleWeapons;
 
     private Integer increasedUnequipTime;
     private Integer reducedVerticalRecoil;
@@ -53,24 +54,79 @@ public class FullItemStatBlockDTO {
     private Integer reducedDurabilityBurnRate;
     private Integer reducedRecoilRecoveryTime;
     private Integer increasedRecoilRecoveryTime;
-    private Integer reducedDispersionRecoveryTime;
+    private Double reducedDispersionRecoveryTime;
 
-    public FullItemStatBlockDTO(){}
+    public ItemStatBlockDTO(){}
 
-    public Integer getRange() {
+    public ItemStatBlockDTO(String firingMode, Double range, Integer damage, Integer health, Integer radius, Integer shield, Double weight, Double agility, Double arcStun, Integer healing, Integer stamina, Integer stealth, Double useTime, Integer duration, Double fireRate, Double stability, Integer stackSize, Integer damageMult, Double raiderStun, Integer weightLimit, Integer augmentSlots, Integer healingSlots, Integer magazineSize, Integer reducedNoise, Double shieldCharge, Integer backpackSlots, Integer quickUseSlots, Integer damagePerSecond, Integer movementPenalty, Integer safePocketSlots, Integer damageMitigation, Integer healingPerSecond, Integer reducedEquipTime, Integer staminaPerSecond, Integer increasedADSSpeed, Integer increasedFireRate, Integer reducedReloadTime, Integer illuminationRadius, Integer increasedEquipTime, Integer reducedUnequipTime, String shieldCompatibility, String compatibleWeapons, Integer increasedUnequipTime, Integer reducedVerticalRecoil, Integer increasedBulletVelocity, Integer increasedVerticalRecoil, Integer reducedMaxShotDispersion, Integer reducedPerShotDispersion, Integer reducedDurabilityBurnRate, Integer reducedRecoilRecoveryTime, Integer increasedRecoilRecoveryTime, Double reducedDispersionRecoveryTime) {
+        this.range = range;
+        this.damage = damage;
+        this.health = health;
+        this.radius = radius;
+        this.shield = shield;
+        this.weight = weight;
+        this.agility = agility;
+        this.arcStun = arcStun;
+        this.healing = healing;
+        this.stamina = stamina;
+        this.stealth = stealth;
+        this.useTime = useTime;
+        this.duration = duration;
+        this.fireRate = fireRate;
+        this.stability = stability;
+        this.stackSize = stackSize;
+        this.damageMult = damageMult;
+        this.raiderStun = raiderStun;
+        this.weightLimit = weightLimit;
+        this.augmentSlots = augmentSlots;
+        this.healingSlots = healingSlots;
+        this.magazineSize = magazineSize;
+        this.reducedNoise = reducedNoise;
+        this.shieldCharge = shieldCharge;
+        this.backpackSlots = backpackSlots;
+        this.quickUseSlots = quickUseSlots;
+        this.damagePerSecond = damagePerSecond;
+        this.movementPenalty = movementPenalty;
+        this.safePocketSlots = safePocketSlots;
+        this.damageMitigation = damageMitigation;
+        this.healingPerSecond = healingPerSecond;
+        this.reducedEquipTime = reducedEquipTime;
+        this.staminaPerSecond = staminaPerSecond;
+        this.increasedADSSpeed = increasedADSSpeed;
+        this.increasedFireRate = increasedFireRate;
+        this.reducedReloadTime = reducedReloadTime;
+        this.illuminationRadius = illuminationRadius;
+        this.increasedEquipTime = increasedEquipTime;
+        this.reducedUnequipTime = reducedUnequipTime;
+        this.shieldCompatibility = shieldCompatibility;
+        this.firingMode = firingMode;
+        this.compatibleWeapons = compatibleWeapons;
+        this.increasedUnequipTime = increasedUnequipTime;
+        this.reducedVerticalRecoil = reducedVerticalRecoil;
+        this.increasedBulletVelocity = increasedBulletVelocity;
+        this.increasedVerticalRecoil = increasedVerticalRecoil;
+        this.reducedMaxShotDispersion = reducedMaxShotDispersion;
+        this.reducedPerShotDispersion = reducedPerShotDispersion;
+        this.reducedDurabilityBurnRate = reducedDurabilityBurnRate;
+        this.reducedRecoilRecoveryTime = reducedRecoilRecoveryTime;
+        this.increasedRecoilRecoveryTime = increasedRecoilRecoveryTime;
+        this.reducedDispersionRecoveryTime = reducedDispersionRecoveryTime;
+    }
+
+    public String getCompatibleWeapons() {
+        return compatibleWeapons;
+    }
+
+    public void setCompatibleWeapons(String compatibleWeapons) {
+        this.compatibleWeapons = compatibleWeapons;
+    }
+
+    public Double getRange() {
         return range;
     }
 
-    public void setRange(Integer range) {
+    public void setRange(Double range) {
         this.range = range;
-    }
-
-    public Integer getValue() {
-        return value;
-    }
-
-    public void setValue(Integer value) {
-        this.value = value;
     }
 
     public Integer getDamage() {
@@ -105,27 +161,27 @@ public class FullItemStatBlockDTO {
         this.shield = shield;
     }
 
-    public Integer getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
-    public void setWeight(Integer weight) {
+    public void setWeight(Double weight) {
         this.weight = weight;
     }
 
-    public Integer getAgility() {
+    public Double getAgility() {
         return agility;
     }
 
-    public void setAgility(Integer agility) {
+    public void setAgility(Double agility) {
         this.agility = agility;
     }
 
-    public Integer getArcStun() {
+    public Double getArcStun() {
         return arcStun;
     }
 
-    public void setArcStun(Integer arcStun) {
+    public void setArcStun(Double arcStun) {
         this.arcStun = arcStun;
     }
 
@@ -153,11 +209,11 @@ public class FullItemStatBlockDTO {
         this.stealth = stealth;
     }
 
-    public Integer getUseTime() {
+    public Double getUseTime() {
         return useTime;
     }
 
-    public void setUseTime(Integer useTime) {
+    public void setUseTime(Double useTime) {
         this.useTime = useTime;
     }
 
@@ -169,19 +225,19 @@ public class FullItemStatBlockDTO {
         this.duration = duration;
     }
 
-    public Integer getFireRate() {
+    public Double getFireRate() {
         return fireRate;
     }
 
-    public void setFireRate(Integer fireRate) {
+    public void setFireRate(Double fireRate) {
         this.fireRate = fireRate;
     }
 
-    public Integer getStability() {
+    public Double getStability() {
         return stability;
     }
 
-    public void setStability(Integer stability) {
+    public void setStability(Double stability) {
         this.stability = stability;
     }
 
@@ -201,11 +257,11 @@ public class FullItemStatBlockDTO {
         this.damageMult = damageMult;
     }
 
-    public Integer getRaiderStun() {
+    public Double getRaiderStun() {
         return raiderStun;
     }
 
-    public void setRaiderStun(Integer raiderStun) {
+    public void setRaiderStun(Double raiderStun) {
         this.raiderStun = raiderStun;
     }
 
@@ -249,11 +305,11 @@ public class FullItemStatBlockDTO {
         this.reducedNoise = reducedNoise;
     }
 
-    public Integer getShieldCharge() {
+    public Double getShieldCharge() {
         return shieldCharge;
     }
 
-    public void setShieldCharge(Integer shieldCharge) {
+    public void setShieldCharge(Double shieldCharge) {
         this.shieldCharge = shieldCharge;
     }
 
@@ -457,11 +513,19 @@ public class FullItemStatBlockDTO {
         this.increasedRecoilRecoveryTime = increasedRecoilRecoveryTime;
     }
 
-    public Integer getReducedDispersionRecoveryTime() {
+    public Double getReducedDispersionRecoveryTime() {
         return reducedDispersionRecoveryTime;
     }
 
-    public void setReducedDispersionRecoveryTime(Integer reducedDispersionRecoveryTime) {
+    public void setReducedDispersionRecoveryTime(Double reducedDispersionRecoveryTime) {
         this.reducedDispersionRecoveryTime = reducedDispersionRecoveryTime;
+    }
+
+    public String getFiringMode() {
+        return firingMode;
+    }
+
+    public void setFiringMode(String firingMode) {
+        this.firingMode = firingMode;
     }
 }

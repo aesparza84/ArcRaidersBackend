@@ -225,13 +225,120 @@
           "created_at": "2026-02-09T15:49:04.756153+00:00"
         }
       ]
+    },
+    {
+      "id": "comet",
+      "name": "Comet",
+      "description": "Often found guarding heavy machines, the Comet serves as a brutal deterrent against Raiders who attempt flanking tactics. When it acquires a target it accelerates with alarming speed, and triggers its self-destruct once it's near enough to guarantee damage.\n\nIts blast radius is generous and unforgiving, as grouped-up squads have learned the hard way. Its armor plating protects its core, but it opens up when it charges, exposing its vulnerable innards. However, even when exposed, hitting such a fast-moving weak spot requires a particularly skilled trigger finger.\n\nExperienced Raiders treat the Comet as a priority target, dropping it before engaging whatever it's protecting. The alternative is fighting a Bastion while a live bomb circles for an opening. Shani suspects ARC deployed them specifically in response to Raider flanking tactics - another sign that the machines are learning",
+      "icon": "https://cdn.metaforge.app/arc-raiders/icons/comet.webp",
+      "image": "https://cdn.metaforge.app/arc-raiders/images/comet.webp",
+      "created_at": "2026-02-23T17:10:27.277136+00:00",
+      "updated_at": "2026-02-24T19:03:58.830776+00:00",
+      "loot": [
+        {
+          "id": "33007b1b-82e0-41fb-bd5c-d8838e6f11a6",
+          "item": {
+            "id": "comet-igniter",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/comet-igniter.webp",
+            "name": "Comet Igniter",
+            "rarity": "Rare",
+            "item_type": "Recyclable"
+          },
+          "item_id": "comet-igniter",
+          "created_at": "2026-02-24T19:03:59.222558+00:00"
+        },
+        {
+          "id": "8a54105c-90a1-4697-a643-af5650907a91",
+          "item": {
+            "id": "arc-alloy",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/arc-alloy.webp",
+            "name": "ARC Alloy",
+            "rarity": "Uncommon",
+            "item_type": "Topside Material"
+          },
+          "item_id": "arc-alloy",
+          "created_at": "2026-02-24T19:03:59.222558+00:00"
+        },
+        {
+          "id": "ad76eae2-fe33-47c3-af0f-9acb292c1549",
+          "item": {
+            "id": "crude-explosives",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/crude-explosives.webp",
+            "name": "Crude Explosives",
+            "rarity": "Uncommon",
+            "item_type": "Refined Material"
+          },
+          "item_id": "crude-explosives",
+          "created_at": "2026-02-24T19:03:59.222558+00:00"
+        },
+        {
+          "id": "cb68bb97-bd61-4988-8e7f-cecef71b5b29",
+          "item": {
+            "id": "advanced-arc-powercell",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/advanced-arc-powercell.webp",
+            "name": "Advanced ARC Powercell",
+            "rarity": "Rare",
+            "item_type": "Topside Material"
+          },
+          "item_id": "advanced-arc-powercell",
+          "created_at": "2026-02-24T19:03:59.222558+00:00"
+        },
+        {
+          "id": "ef900a23-6b55-421e-9b46-55c77ee287e9",
+          "item": {
+            "id": "explosive-compound",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/explosive-compound.webp",
+            "name": "Explosive Compound",
+            "rarity": "Rare",
+            "item_type": "Refined Material"
+          },
+          "item_id": "explosive-compound",
+          "created_at": "2026-02-24T19:03:59.222558+00:00"
+        },
+        {
+          "id": "f753b533-3736-4735-b9e6-4a9f842cafc0",
+          "item": {
+            "id": "arc-coolant",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/arc-coolant.webp",
+            "name": "ARC Coolant",
+            "rarity": "Rare",
+            "item_type": "Recyclable"
+          },
+          "item_id": "arc-coolant",
+          "created_at": "2026-02-24T19:03:59.222558+00:00"
+        },
+        {
+          "id": "58bfa915-443f-408f-9c0b-4aec0ce2c3c4",
+          "item": {
+            "id": "arc-thermo-lining",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/arc-thermo-lining.webp",
+            "name": "ARC Thermo Lining",
+            "rarity": "Rare",
+            "item_type": "Recyclable"
+          },
+          "item_id": "arc-thermo-lining",
+          "created_at": "2026-02-24T19:03:59.222558+00:00"
+        },
+        {
+          "id": "6eca8ac7-4e77-442f-8403-dea928a1c55d",
+          "item": {
+            "id": "electrical-components",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/electrical-components.webp",
+            "name": "Electrical Components",
+            "rarity": "Uncommon",
+            "item_type": "Refined Material"
+          },
+          "item_id": "electrical-components",
+          "created_at": "2026-02-24T19:03:59.222558+00:00"
+        }
+      ]
     }
   ],
   "pagination": {
     "page": 1,
-    "limit": 2,
-    "total": 17,
-    "totalPages": 9,
+    "limit": 3,
+    "total": 19,
+    "totalPages": 7,
     "hasNextPage": true,
     "hasPrevPage": false
   }

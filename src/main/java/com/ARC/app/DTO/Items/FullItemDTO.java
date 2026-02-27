@@ -23,7 +23,7 @@ public class FullItemDTO {
     private String workbench;
 
     @JsonProperty("stat_block")
-    private FullItemStatBlockDTO statBlock;
+    private ItemStatBlockDTO statBlock;
 
     @JsonProperty("flavor_text")
     private String flavorText;
@@ -64,6 +64,33 @@ public class FullItemDTO {
     private List<GuideLinksDTO> guideLinks;
 
     public FullItemDTO() {}
+
+    public FullItemDTO(String id, String name, String description, String itemType, List<String> loadoutSlots, String icon, String rarity, Integer value, String workbench, ItemStatBlockDTO statBlock, String flavorText, String subcategory, String shieldType, String lootArea, List<String> sources, String ammoType, List<String> locations, List<SubItemComponentReferenceDTO> components, List<SubItemComponentReferenceDTO> recycleComponents, List<SubItemItemReferenceDTO> usedIn, List<SubItemItemReferenceDTO> recycleFrom, List<SubItemModReferenceDTO> mods, List<ItemDropByDTO> droppedBy, List<GuideLinksDTO> guideLinks) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.itemType = itemType;
+        this.loadoutSlots = loadoutSlots;
+        this.icon = icon;
+        this.rarity = rarity;
+        this.value = value;
+        this.workbench = workbench;
+        this.statBlock = statBlock;
+        this.flavorText = flavorText;
+        this.subcategory = subcategory;
+        this.shieldType = shieldType;
+        this.lootArea = lootArea;
+        this.sources = sources;
+        this.ammoType = ammoType;
+        this.locations = locations;
+        this.components = components;
+        this.recycleComponents = recycleComponents;
+        this.usedIn = usedIn;
+        this.recycleFrom = recycleFrom;
+        this.mods = mods;
+        this.droppedBy = droppedBy;
+        this.guideLinks = guideLinks;
+    }
 
     public String getId() {
         return id;
@@ -137,11 +164,11 @@ public class FullItemDTO {
         this.workbench = workbench;
     }
 
-    public FullItemStatBlockDTO getStatBlock() {
+    public ItemStatBlockDTO getStatBlock() {
         return statBlock;
     }
 
-    public void setStatBlock(FullItemStatBlockDTO statBlock) {
+    public void setStatBlock(ItemStatBlockDTO statBlock) {
         this.statBlock = statBlock;
     }
 

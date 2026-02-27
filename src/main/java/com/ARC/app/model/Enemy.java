@@ -1,18 +1,22 @@
 package com.ARC.app.model;
 
-import com.ARC.app.DTO.ARC.EnemyItemContainerDTO;
+import com.ARC.app.DTO.ARC.EnemyDTO;
 
 import java.util.List;
 
 public class Enemy {
+    private String id;
     private String name;
     private String description;
     private String icon;
     private String image;
-    private List<EnemyItemContainerDTO> loot;
+
+
+    private List<ItemBase> loot; //FK
 
     public Enemy(){}
-    public Enemy(String name, String description, String icon, String image, List<EnemyItemContainerDTO> loot) {
+    public Enemy(String id, String name, String description, String icon, String image, List<ItemBase> loot) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.icon = icon;
@@ -52,11 +56,30 @@ public class Enemy {
         this.image = image;
     }
 
-    public List<EnemyItemContainerDTO> getLoot() {
+    public List<ItemBase> getLoot() {
         return loot;
     }
 
-    public void setLoot(List<EnemyItemContainerDTO> loot) {
+    public void setLoot(List<ItemBase> loot) {
         this.loot = loot;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public EnemyDTO ToDTO() {
+        return new EnemyDTO(
+                this.id,
+                this.name,
+                this.description,
+                this.icon,
+                this.image,
+                this.loot
+        );
     }
 }
