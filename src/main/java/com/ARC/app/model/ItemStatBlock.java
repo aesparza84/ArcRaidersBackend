@@ -6,7 +6,7 @@ public class ItemStatBlock {
     private Double range;
     private Integer damage;
     private Integer health;
-    private Integer radius;
+    private Double radius;
     private Integer shield;
     private Double weight;
     private Double agility;
@@ -15,11 +15,11 @@ public class ItemStatBlock {
     private Integer stamina;
     private Integer stealth;
     private Double useTime;
-    private Integer duration;
+    private Double duration;
     private Double fireRate;
     private Double stability;
     private Integer stackSize;
-    private Integer damageMult;
+    private Double damageMult;
     private Double raiderStun;
     private Integer weightLimit;
     private Integer augmentSlots;
@@ -33,7 +33,7 @@ public class ItemStatBlock {
     private Integer movementPenalty;
     private Integer safePocketSlots;
     private Integer damageMitigation;
-    private Integer healingPerSecond;
+    private Double healingPerSecond;
     private Integer reducedEquipTime;
     private Integer staminaPerSecond;
     private Integer increasedADSSpeed;
@@ -92,11 +92,11 @@ public class ItemStatBlock {
         this.health = health;
     }
 
-    public Integer getRadius() {
+    public Double getRadius() {
         return radius;
     }
 
-    public void setRadius(Integer radius) {
+    public void setRadius(Double radius) {
         this.radius = radius;
     }
 
@@ -164,11 +164,11 @@ public class ItemStatBlock {
         this.useTime = useTime;
     }
 
-    public Integer getDuration() {
+    public Double getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(Double duration) {
         this.duration = duration;
     }
 
@@ -196,11 +196,11 @@ public class ItemStatBlock {
         this.stackSize = stackSize;
     }
 
-    public Integer getDamageMult() {
+    public Double getDamageMult() {
         return damageMult;
     }
 
-    public void setDamageMult(Integer damageMult) {
+    public void setDamageMult(Double damageMult) {
         this.damageMult = damageMult;
     }
 
@@ -308,11 +308,11 @@ public class ItemStatBlock {
         this.damageMitigation = damageMitigation;
     }
 
-    public Integer getHealingPerSecond() {
+    public Double getHealingPerSecond() {
         return healingPerSecond;
     }
 
-    public void setHealingPerSecond(Integer healingPerSecond) {
+    public void setHealingPerSecond(Double healingPerSecond) {
         this.healingPerSecond = healingPerSecond;
     }
 

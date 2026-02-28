@@ -4,7 +4,7 @@ public class ItemStatBlockDTO {
     private Double range;
     private Integer damage;
     private Integer health;
-    private Integer radius;
+    private Double radius;
     private Integer shield;
     private Double weight;
     private Double agility;
@@ -13,11 +13,11 @@ public class ItemStatBlockDTO {
     private Integer stamina;
     private Integer stealth;
     private Double useTime;
-    private Integer duration;
+    private Double duration;
     private Double fireRate;
     private Double stability;
     private Integer stackSize;
-    private Integer damageMult;
+    private Double damageMult;
     private Double raiderStun;
     private Integer weightLimit;
     private Integer augmentSlots;
@@ -31,7 +31,7 @@ public class ItemStatBlockDTO {
     private Integer movementPenalty;
     private Integer safePocketSlots;
     private Integer damageMitigation;
-    private Integer healingPerSecond;
+    private Double healingPerSecond;
     private Integer reducedEquipTime;
     private Integer staminaPerSecond;
     private Integer increasedADSSpeed;
@@ -58,7 +58,7 @@ public class ItemStatBlockDTO {
 
     public ItemStatBlockDTO(){}
 
-    public ItemStatBlockDTO(String firingMode, Double range, Integer damage, Integer health, Integer radius, Integer shield, Double weight, Double agility, Double arcStun, Integer healing, Integer stamina, Integer stealth, Double useTime, Integer duration, Double fireRate, Double stability, Integer stackSize, Integer damageMult, Double raiderStun, Integer weightLimit, Integer augmentSlots, Integer healingSlots, Integer magazineSize, Integer reducedNoise, Double shieldCharge, Integer backpackSlots, Integer quickUseSlots, Integer damagePerSecond, Integer movementPenalty, Integer safePocketSlots, Integer damageMitigation, Integer healingPerSecond, Integer reducedEquipTime, Integer staminaPerSecond, Integer increasedADSSpeed, Integer increasedFireRate, Integer reducedReloadTime, Integer illuminationRadius, Integer increasedEquipTime, Integer reducedUnequipTime, String shieldCompatibility, String compatibleWeapons, Integer increasedUnequipTime, Integer reducedVerticalRecoil, Integer increasedBulletVelocity, Integer increasedVerticalRecoil, Integer reducedMaxShotDispersion, Integer reducedPerShotDispersion, Integer reducedDurabilityBurnRate, Integer reducedRecoilRecoveryTime, Integer increasedRecoilRecoveryTime, Double reducedDispersionRecoveryTime) {
+    public ItemStatBlockDTO(String firingMode, Double range, Integer damage, Integer health, Double radius, Integer shield, Double weight, Double agility, Double arcStun, Integer healing, Integer stamina, Integer stealth, Double useTime, Double duration, Double fireRate, Double stability, Integer stackSize, Double damageMult, Double raiderStun, Integer weightLimit, Integer augmentSlots, Integer healingSlots, Integer magazineSize, Integer reducedNoise, Double shieldCharge, Integer backpackSlots, Integer quickUseSlots, Integer damagePerSecond, Integer movementPenalty, Integer safePocketSlots, Integer damageMitigation, Double healingPerSecond, Integer reducedEquipTime, Integer staminaPerSecond, Integer increasedADSSpeed, Integer increasedFireRate, Integer reducedReloadTime, Integer illuminationRadius, Integer increasedEquipTime, Integer reducedUnequipTime, String shieldCompatibility, String compatibleWeapons, Integer increasedUnequipTime, Integer reducedVerticalRecoil, Integer increasedBulletVelocity, Integer increasedVerticalRecoil, Integer reducedMaxShotDispersion, Integer reducedPerShotDispersion, Integer reducedDurabilityBurnRate, Integer reducedRecoilRecoveryTime, Integer increasedRecoilRecoveryTime, Double reducedDispersionRecoveryTime) {
         this.range = range;
         this.damage = damage;
         this.health = health;
@@ -145,11 +145,11 @@ public class ItemStatBlockDTO {
         this.health = health;
     }
 
-    public Integer getRadius() {
+    public Double getRadius() {
         return radius;
     }
 
-    public void setRadius(Integer radius) {
+    public void setRadius(Double radius) {
         this.radius = radius;
     }
 
@@ -217,11 +217,11 @@ public class ItemStatBlockDTO {
         this.useTime = useTime;
     }
 
-    public Integer getDuration() {
+    public Double getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(Double duration) {
         this.duration = duration;
     }
 
@@ -249,11 +249,11 @@ public class ItemStatBlockDTO {
         this.stackSize = stackSize;
     }
 
-    public Integer getDamageMult() {
+    public Double getDamageMult() {
         return damageMult;
     }
 
-    public void setDamageMult(Integer damageMult) {
+    public void setDamageMult(Double damageMult) {
         this.damageMult = damageMult;
     }
 
@@ -361,11 +361,11 @@ public class ItemStatBlockDTO {
         this.damageMitigation = damageMitigation;
     }
 
-    public Integer getHealingPerSecond() {
+    public Double getHealingPerSecond() {
         return healingPerSecond;
     }
 
-    public void setHealingPerSecond(Integer healingPerSecond) {
+    public void setHealingPerSecond(Double healingPerSecond) {
         this.healingPerSecond = healingPerSecond;
     }
 

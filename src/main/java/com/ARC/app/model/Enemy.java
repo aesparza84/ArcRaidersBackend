@@ -1,6 +1,8 @@
 package com.ARC.app.model;
 
 import com.ARC.app.DTO.ARC.EnemyDTO;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 import java.util.List;
 

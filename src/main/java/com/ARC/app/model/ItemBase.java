@@ -1,21 +1,80 @@
 package com.ARC.app.model;
 
+import com.ARC.app.DTO.Items.ItemDropByDTO;
+import com.ARC.app.DTO.Items.SubItemModReferenceDTO;
+import jakarta.persistence.*;
+
+import java.util.List;
+
+@Entity
+@Table(name = "item_table")
 public class ItemBase {
+
+    @Id
+    @Column(name = "id")
     private String id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "item_type")
     private String itemType;
+
+    @Column(name = "icon")
     private String icon;
+
+    @Column(name = "rarity")
     private String rarity;
+
+    @Column(name = "flavor_text")
     private String flavorText;
-    private Integer weight;
+
+    @Column(name = "weight")
+    private Double weight;
+
+    @Column(name = "stack_size")
     private Integer stackSize;
 
-    private String QuickUseFK; //FK
-    private String WeaponStatsFK; //FK
-    private String WeaponModStatsFK; //FK
+    @OneToOne(mappedBy = "baseItem") //java field name
+    private QuickUseStats quickUseStats; //FK
 
-    public ItemBase(String id, String name, String description, String itemType, String icon, String rarity, String flavorText, Integer weight, Integer stackSize, String quickUseFK, String weaponStatsFK, String weaponModStatsFK) {
+    @OneToOne(mappedBy = "baseItem")
+    private WeaponStats weaponStats; //FK
+
+    @OneToOne(mappedBy = "baseItem")
+    private WeaponModStats weaponModStats; //FK
+
+    @OneToMany(mappedBy = "childItem")
+    private List<ItemComponent> components;
+
+//    private List<ItemBase> recycleComponents;
+
+//    private List<ItemBase> usedIn;
+//
+//    private List<ItemBase> recycleFrom;
+//
+//    private List<SubItemModReferenceDTO> mods;
+//
+//    private List<ItemDropByDTO> droppedBy;
+
+    public ItemBase(){}
+
+    public ItemBase(Builder b) {
+        this.id = b.id;
+        this.name = b.name;
+        this.description = b.description;
+        this.itemType = b.itemType;
+        this.icon = b.icon;
+        this.rarity = b.rarity;
+        this.flavorText = b.flavorText;
+        this.weight = b.weight;
+        this.stackSize = b.stackSize;
+    }
+
+    public ItemBase(String id, String name, String description, String itemType, String icon, String rarity, String flavorText, Double weight, Integer stackSize) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -25,33 +84,38 @@ public class ItemBase {
         this.flavorText = flavorText;
         this.weight = weight;
         this.stackSize = stackSize;
-        QuickUseFK = quickUseFK;
-        WeaponStatsFK = weaponStatsFK;
-        WeaponModStatsFK = weaponModStatsFK;
     }
 
-    public String getQuickUseFK() {
-        return QuickUseFK;
+    public QuickUseStats getQuickUseStats() {
+        return quickUseStats;
     }
 
-    public void setQuickUseFK(String quickUseFK) {
-        QuickUseFK = quickUseFK;
+    public void setQuickUseStats(QuickUseStats quickUseStats) {
+        this.quickUseStats = quickUseStats;
     }
 
-    public String getWeaponStatsFK() {
-        return WeaponStatsFK;
+    public WeaponStats getWeaponStats() {
+        return weaponStats;
     }
 
-    public void setWeaponStatsFK(String weaponStatsFK) {
-        WeaponStatsFK = weaponStatsFK;
+    public void setWeaponStats(WeaponStats weaponStats) {
+        this.weaponStats = weaponStats;
     }
 
-    public String getWeaponModStatsFK() {
-        return WeaponModStatsFK;
+    public WeaponModStats getWeaponModStats() {
+        return weaponModStats;
     }
 
-    public void setWeaponModStatsFK(String weaponModStatsFK) {
-        WeaponModStatsFK = weaponModStatsFK;
+    public void setWeaponModStats(WeaponModStats weaponModStats) {
+        this.weaponModStats = weaponModStats;
+    }
+
+    public List<ItemComponent> getComponents() {
+        return components;
+    }
+
+    public void setComponents(List<ItemComponent> components) {
+        this.components = components;
     }
 
     public Integer getStackSize() {
@@ -118,11 +182,72 @@ public class ItemBase {
         this.flavorText = flavorText;
     }
 
-    public Integer getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
-    public void setWeight(Integer weight) {
+    public void setWeight(Double weight) {
         this.weight = weight;
+    }
+
+    public static class Builder {
+        private String id;
+        private String name;
+        private String description;
+        private String itemType;
+        private String icon;
+        private String rarity;
+        private String flavorText;
+        private Double weight;
+        private Integer stackSize;
+
+        public Builder setId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public Builder setItemType(String itemType) {
+            this.itemType = itemType;
+            return this;
+        }
+
+        public Builder setIcon(String icon) {
+            this.icon = icon;
+            return this;
+        }
+
+        public Builder setRarity(String rarity) {
+            this.rarity = rarity;
+            return this;
+        }
+
+        public Builder setFlavorText(String flavorText) {
+            this.flavorText = flavorText;
+            return this;
+        }
+
+        public Builder setWeight(Double weight) {
+            this.weight = weight;
+            return this;
+        }
+
+        public Builder setStackSize(Integer stackSize) {
+            this.stackSize = stackSize;
+            return this;
+        }
+
+        public ItemBase build() {
+            return new ItemBase(this);
+        }
     }
 }

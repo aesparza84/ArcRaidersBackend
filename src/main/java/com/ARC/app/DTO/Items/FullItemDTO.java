@@ -1,5 +1,6 @@
 package com.ARC.app.DTO.Items;
 
+import com.ARC.app.model.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.ARC.app.DTO.GuideLinksDTO;
 
@@ -59,7 +60,6 @@ public class FullItemDTO {
     @JsonProperty("dropped_by")
     private List<ItemDropByDTO> droppedBy;
 
-
     @JsonProperty("guide_links")
     private List<GuideLinksDTO> guideLinks;
 
@@ -92,6 +92,7 @@ public class FullItemDTO {
         this.guideLinks = guideLinks;
     }
 
+    //region GetterSetter
     public String getId() {
         return id;
     }
@@ -283,5 +284,130 @@ public class FullItemDTO {
     public void setDroppedBy(List<ItemDropByDTO> droppedBy) {
         this.droppedBy = droppedBy;
     }
+    //endregion
+
+    public ItemBase toItemBase() {
+        ItemBase base = new ItemBase(
+                this.id,
+                this.name,
+                this.description,
+                this.itemType,
+                this.icon,
+                this.rarity,
+                this.flavorText,
+                this.statBlock.getWeight(),
+                this.statBlock.getStackSize()
+        );
+
+        return base;
+    }
+
+    public WeaponStats toWeaponStats(){
+        WeaponStats stats = new WeaponStats.Builder()
+                .itemId(this.id)
+                .damage(this.statBlock.getDamage())
+                .stealth(this.statBlock.getStealth())
+                .magazineSize(this.statBlock.getMagazineSize())
+                .increasedFireRate(this.statBlock.getIncreasedFireRate())
+                .range(this.statBlock.getRange())
+                .agility(this.statBlock.getAgility())
+                .fireRate(this.statBlock.getFireRate())
+                .stability(this.statBlock.getStability())
+                .reducedDispersionRecoveryTime(this.statBlock.getReducedDispersionRecoveryTime())
+                .build();
+
+        //SET ITEM-BASE
+        ItemBase base = new ItemBase(
+                this.id,
+                this.name,
+                this.description,
+                this.itemType,
+                this.icon,
+                this.rarity,
+                this.flavorText,
+                this.statBlock.getWeight(),
+                this.statBlock.getStackSize()
+        );
+        stats.setBaseItem(base);
+
+        return stats;
+    }
+
+    public WeaponModStats toWeaponModStats() {
+        WeaponModStats stats = new WeaponModStats.Builder()
+                .itemId(this.id)
+                .range(this.statBlock.getRange())
+                .stability(this.statBlock.getStability())
+                .damageMult(this.statBlock.getDamageMult())
+                .augmentSlots(this.statBlock.getAugmentSlots())
+                .magazineSize(this.statBlock.getMagazineSize())
+                .reducedNoise(this.statBlock.getReducedNoise())
+                .damagePerSecond(this.statBlock.getDamagePerSecond())
+                .reducedEquipTime(this.statBlock.getReducedEquipTime())
+                .compatibleWeapons(this.statBlock.getCompatibleWeapons())
+                .increasedUnequipTime(this.statBlock.getIncreasedUnequipTime())
+                .reducedVerticalRecoil(this.statBlock.getReducedVerticalRecoil())
+                .increasedBulletVelocity(this.statBlock.getIncreasedBulletVelocity())
+                .increasedVerticalRecoil(this.statBlock.getIncreasedVerticalRecoil())
+                .reducedMaxShotDispersion(this.statBlock.getReducedMaxShotDispersion())
+                .reducedPerShotDispersion(this.statBlock.getReducedPerShotDispersion())
+                .reducedDurabilityBurnRate(this.statBlock.getReducedDurabilityBurnRate())
+                .increasedRecoilRecoveryTime(this.statBlock.getIncreasedRecoilRecoveryTime())
+                .reducedDispersionRecoveryTime(this.statBlock.getReducedDispersionRecoveryTime())
+                .build();
+
+        //SET ITEM-BASE
+        ItemBase base = new ItemBase(
+                this.id,
+                this.name,
+                this.description,
+                this.itemType,
+                this.icon,
+                this.rarity,
+                this.flavorText,
+                this.statBlock.getWeight(),
+                this.statBlock.getStackSize()
+        );
+        stats.setBaseItem(base);
+
+        return stats;
+    }
+
+    public QuickUseStats toQuickUseStats() {
+        QuickUseStats stats = new QuickUseStats.Builder()
+                .itemId(this.id)
+                .arcStun(this.statBlock.getArcStun())
+                .damage(statBlock.getDamage())
+                .radius(statBlock.getRadius())
+                .damage(statBlock.getDamage())
+                .damageMult(statBlock.getDamageMult())
+                .duration(statBlock.getDuration())
+                .healingPerSecond(statBlock.getHealingPerSecond())
+                .shieldCharge(statBlock.getShieldCharge())
+                .useTime(statBlock.getUseTime())
+                .raiderStun(statBlock.getRaiderStun())
+                .build();
+
+        //SET ITEM-BASE
+        ItemBase base = new ItemBase(
+                this.id,
+                this.name,
+                this.description,
+                this.itemType,
+                this.icon,
+                this.rarity,
+                this.flavorText,
+                this.statBlock.getWeight(),
+                this.statBlock.getStackSize()
+        );
+        stats.setBaseItem(base);
+
+        return stats;
+    }
+
+    public Enemy toEnemy(){
+        return null;
+    }
+
 }
 

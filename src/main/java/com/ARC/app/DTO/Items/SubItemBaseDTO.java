@@ -1,5 +1,6 @@
 package com.ARC.app.DTO.Items;
 
+import com.ARC.app.model.ItemBase;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SubItemBaseDTO {
@@ -69,5 +70,15 @@ public class SubItemBaseDTO {
 
     public void setItemType(String itemType) {
         this.itemType = itemType;
+    }
+
+    public ItemBase toItemBase(){
+        return new ItemBase.Builder()
+                .setId(this.id)
+                .setIcon(this.icon)
+                .setName(this.name)
+                .setRarity(this.rarity)
+                .setDescription(this.description)
+                .build();
     }
 }

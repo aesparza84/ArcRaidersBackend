@@ -4,6 +4,7 @@ import com.ARC.app.DTO.ARC.EnemyResponseDTO;
 import com.ARC.app.DTO.Items.FullItemResponseDTO;
 import com.ARC.app.service.ApiMessengerService;
 import com.ARC.app.service.CacheService;
+import com.ARC.app.service.DataAquisitionService;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import org.springframework.http.ResponseEntity;
@@ -21,16 +22,24 @@ public class HomeController {
 
     private ApiMessengerService apiService;
     private CacheService cacheService;
+    private DataAquisitionService dataService;
 
-    public HomeController(ApiMessengerService ap, CacheService c) {
-        this.apiService = ap;
-        this.cacheService = c;
+    public HomeController(ApiMessengerService apiService, CacheService cacheService, DataAquisitionService dataService) {
+        this.apiService = apiService;
+        this.cacheService = cacheService;
+        this.dataService = dataService;
     }
 
     @GetMapping("/")
     public ResponseEntity<String> Home() {
         return ResponseEntity.ok("Home");
     }
+
+    @GetMapping("/test")
+    public void SaveDataTest() {
+        dataService.GatherItemInfo();
+    }
+
 
     @GetMapping("/c")
     public void Cached(){

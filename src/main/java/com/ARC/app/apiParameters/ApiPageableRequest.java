@@ -92,21 +92,19 @@ public class ApiPageableRequest {
             return new ApiPageableRequest(this);
         }
 
-        @Override
-        public boolean equals(Object obj) {
-            if (obj == null)
-                return false;
-            if (this == obj)
-                return true;
+    }
 
-            ApiPageableRequest o = (ApiPageableRequest) obj;
-
-            return this.page == o.page &&
-                    this.limit == o.limit &&
-                    this.search == o.search &&
-                    this.sortOrder == o.sortOrder &&
-                    this.id == o.id;
-
-        }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        if (this == obj)
+            return true;
+        ApiPageableRequest o = (ApiPageableRequest) obj;
+        return this.page == o.page &&
+                this.limit == o.limit &&
+                this.search == o.search &&
+                this.sortOrder == o.sortOrder &&
+                this.id == o.id;
     }
 }

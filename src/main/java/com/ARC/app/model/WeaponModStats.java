@@ -1,30 +1,103 @@
 package com.ARC.app.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "weapon_mod_stats_table")
 public class WeaponModStats {
+
+    @Id
+    @Column(name = "item_id")
     private String itemId;
+
+    @Column(name = "range")
     private Double range;
+
+    @Column(name = "stability")
     private Double stability;
-    private Integer damageMult;
+
+    @Column(name = "damage_mult")
+    private Double damageMult;
+
+    @Column(name = "augment_slots")
     private Integer augmentSlots;
+
+    @Column(name = "magazine_size")
     private Integer magazineSize;
+
+    @Column(name = "reduced_noise")
     private Integer reducedNoise;
+
+    @Column(name = "damage_per_second")
     private Integer damagePerSecond;
+
+    @Column(name = "reduced_equip_time")
     private Integer reducedEquipTime;
 
+    @Column(name = "compatible_weapons")
     private String compatibleWeapons;
 
+    @Column(name = "increased_unequip_time")
     private Integer increasedUnequipTime;
+
+    @Column(name = "reduced_vertical_recoil")
     private Integer reducedVerticalRecoil;
+
+    @Column(name = "increased_bullet_velocity")
     private Integer increasedBulletVelocity;
+
+    @Column(name = "increased_vertical_recoil")
     private Integer increasedVerticalRecoil;
+
+    @Column(name = "reduced_max_shot_dispersion")
     private Integer reducedMaxShotDispersion;
+
+    @Column(name = "reduced_per_shot_dispersion")
     private Integer reducedPerShotDispersion;
+
+    @Column(name = "reduced_durability_burn_rate")
     private Integer reducedDurabilityBurnRate;
+
+    @Column(name = "reduced_recoil_recovery_time")
     private Integer reducedRecoilRecoveryTime;
+
+    @Column(name = "increased_recoil_recovery_time")
     private Integer increasedRecoilRecoveryTime;
+
+    @Column(name = "reduced_dispersion_recovery_time")
     private Double reducedDispersionRecoveryTime;
 
-    public WeaponModStats(String item_id, Double range, Double stability, Integer damageMult, Integer augmentSlots, Integer magazineSize, Integer reducedNoise, Integer damagePerSecond, Integer reducedEquipTime, String compatibleWeapons, Integer increasedUnequipTime, Integer reducedVerticalRecoil, Integer increasedBulletVelocity, Integer increasedVerticalRecoil, Integer reducedMaxShotDispersion, Integer reducedPerShotDispersion, Integer reducedDurabilityBurnRate, Integer reducedRecoilRecoveryTime, Integer increasedRecoilRecoveryTime, Double reducedDispersionRecoveryTime) {
+    @OneToOne
+    @JoinColumn(name = "item_id")
+    private ItemBase baseItem;
+
+    public WeaponModStats(){}
+
+    public WeaponModStats(Builder b) {
+        this.itemId = b.itemId;
+        this.range = b.range;
+        this.stability = b.stability;
+        this.damageMult = b.damageMult;
+        this.augmentSlots = b.augmentSlots;
+        this.magazineSize = b.magazineSize;
+        this.reducedNoise = b.reducedNoise;
+        this.damagePerSecond = b.damagePerSecond;
+        this.reducedEquipTime = b.reducedEquipTime;
+        this.compatibleWeapons = b.compatibleWeapons;
+        this.increasedUnequipTime = b.increasedUnequipTime;
+        this.reducedVerticalRecoil = b.reducedVerticalRecoil;
+        this.increasedBulletVelocity = b.increasedBulletVelocity;
+        this.increasedVerticalRecoil = b.increasedVerticalRecoil;
+        this.reducedMaxShotDispersion = b.reducedMaxShotDispersion;
+        this.reducedPerShotDispersion = b.reducedPerShotDispersion;
+        this.reducedDurabilityBurnRate = b.reducedDurabilityBurnRate;
+        this.reducedRecoilRecoveryTime = b.reducedRecoilRecoveryTime;
+        this.increasedRecoilRecoveryTime = b.increasedRecoilRecoveryTime;
+        this.reducedDispersionRecoveryTime = b.reducedDispersionRecoveryTime;
+
+    }
+
+    public WeaponModStats(String item_id, Double range, Double stability, Double damageMult, Integer augmentSlots, Integer magazineSize, Integer reducedNoise, Integer damagePerSecond, Integer reducedEquipTime, String compatibleWeapons, Integer increasedUnequipTime, Integer reducedVerticalRecoil, Integer increasedBulletVelocity, Integer increasedVerticalRecoil, Integer reducedMaxShotDispersion, Integer reducedPerShotDispersion, Integer reducedDurabilityBurnRate, Integer reducedRecoilRecoveryTime, Integer increasedRecoilRecoveryTime, Double reducedDispersionRecoveryTime) {
         this.itemId = item_id;
         this.range = range;
         this.stability = stability;
@@ -71,11 +144,11 @@ public class WeaponModStats {
         this.stability = stability;
     }
 
-    public Integer getDamageMult() {
+    public Double getDamageMult() {
         return damageMult;
     }
 
-    public void setDamageMult(Integer damageMult) {
+    public void setDamageMult(Double damageMult) {
         this.damageMult = damageMult;
     }
 
@@ -205,5 +278,140 @@ public class WeaponModStats {
 
     public void setReducedDispersionRecoveryTime(Double reducedDispersionRecoveryTime) {
         this.reducedDispersionRecoveryTime = reducedDispersionRecoveryTime;
+    }
+
+    public ItemBase getBaseItem() {
+        return baseItem;
+    }
+
+    public void setBaseItem(ItemBase baseItem) {
+        this.baseItem = baseItem;
+    }
+
+    public static class Builder{
+        private String itemId;
+        private Double range;
+        private Double stability;
+        private Double damageMult;
+        private Integer augmentSlots;
+        private Integer magazineSize;
+        private Integer reducedNoise;
+        private Integer damagePerSecond;
+        private Integer reducedEquipTime;
+        private String compatibleWeapons;
+        private Integer increasedUnequipTime;
+        private Integer reducedVerticalRecoil;
+        private Integer increasedBulletVelocity;
+        private Integer increasedVerticalRecoil;
+        private Integer reducedMaxShotDispersion;
+        private Integer reducedPerShotDispersion;
+        private Integer reducedDurabilityBurnRate;
+        private Integer reducedRecoilRecoveryTime;
+        private Integer increasedRecoilRecoveryTime;
+        private Double reducedDispersionRecoveryTime;
+
+        public Builder itemId(String itemId) {
+            this.itemId = itemId;
+            return this;
+        }
+
+        public Builder range(Double range) {
+            this.range = range;
+            return this;
+        }
+
+        public Builder stability(Double stability) {
+            this.stability = stability;
+            return this;
+        }
+
+        public Builder damageMult(Double damageMult) {
+            this.damageMult = damageMult;
+            return this;
+        }
+
+        public Builder augmentSlots(Integer augmentSlots) {
+            this.augmentSlots = augmentSlots;
+            return this;
+        }
+
+        public Builder magazineSize(Integer magazineSize) {
+            this.magazineSize = magazineSize;
+            return this;
+        }
+
+        public Builder reducedNoise(Integer reducedNoise) {
+            this.reducedNoise = reducedNoise;
+            return this;
+        }
+
+        public Builder damagePerSecond(Integer damagePerSecond) {
+            this.damagePerSecond = damagePerSecond;
+            return this;
+        }
+
+        public Builder reducedEquipTime(Integer reducedEquipTime) {
+            this.reducedEquipTime = reducedEquipTime;
+            return this;
+        }
+
+        public Builder compatibleWeapons(String compatibleWeapons) {
+            this.compatibleWeapons = compatibleWeapons;
+            return this;
+        }
+
+        public Builder increasedUnequipTime(Integer increasedUnequipTime) {
+            this.increasedUnequipTime = increasedUnequipTime;
+            return this;
+        }
+
+        public Builder reducedVerticalRecoil(Integer reducedVerticalRecoil) {
+            this.reducedVerticalRecoil = reducedVerticalRecoil;
+            return this;
+        }
+
+        public Builder increasedBulletVelocity(Integer increasedBulletVelocity) {
+            this.increasedBulletVelocity = increasedBulletVelocity;
+            return this;
+        }
+
+        public Builder increasedVerticalRecoil(Integer increasedVerticalRecoil) {
+            this.increasedVerticalRecoil = increasedVerticalRecoil;
+            return this;
+        }
+
+        public Builder reducedMaxShotDispersion(Integer reducedMaxShotDispersion) {
+            this.reducedMaxShotDispersion = reducedMaxShotDispersion;
+            return this;
+        }
+
+        public Builder reducedPerShotDispersion(Integer reducedPerShotDispersion) {
+            this.reducedPerShotDispersion = reducedPerShotDispersion;
+            return this;
+        }
+
+        public Builder reducedDurabilityBurnRate(Integer reducedDurabilityBurnRate) {
+            this.reducedDurabilityBurnRate = reducedDurabilityBurnRate;
+            return this;
+        }
+
+        public Builder reducedRecoilRecoveryTime(Integer reducedRecoilRecoveryTime) {
+            this.reducedRecoilRecoveryTime = reducedRecoilRecoveryTime;
+            return this;
+        }
+
+        public Builder increasedRecoilRecoveryTime(Integer increasedRecoilRecoveryTime) {
+            this.increasedRecoilRecoveryTime = increasedRecoilRecoveryTime;
+            return this;
+        }
+
+        public Builder reducedDispersionRecoveryTime(Double reducedDispersionRecoveryTime) {
+            this.reducedDispersionRecoveryTime = reducedDispersionRecoveryTime;
+            return this;
+        }
+
+        public WeaponModStats build() {
+            return new WeaponModStats(this);
+        }
     }
 }
